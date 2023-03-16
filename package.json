@@ -1,0 +1,17 @@
+{
+  "name": "game-model-sorta",
+  "version": "0.0.0",
+  "description": "Don't use this.",
+  "main": "src/",
+  "type": "module",
+  "scripts": {
+    "it": "cd src",
+    "test": "jasmine"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "jasmine": "~4.5.0"
+  }
+}
