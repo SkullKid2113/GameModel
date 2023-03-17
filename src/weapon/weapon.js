@@ -25,6 +25,16 @@ export class Weapon {
             return
         }
 
+        if (this.fireMode === "burst" && this.numRounds === 2) {
+            this.numRounds -= 2
+            return
+        }
+
+        if (this.fireMode === "burst" && this.numRounds === 1) {
+            this.numRounds -= 1
+            return
+        }
+
         this.numRounds--
     }
 
