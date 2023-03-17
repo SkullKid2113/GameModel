@@ -17,11 +17,9 @@ describe("weapon", function() {
             o.shoot()
         }
         expect(o.numRounds).toEqual(0)
-
     })
 
     it("reloads back to 32 rounds", function () {
-
         const o = new Weapon("AK-47", "7.62MM")
         o.shoot()
         expect(o.numRounds).toEqual(31)

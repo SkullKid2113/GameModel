@@ -41,4 +41,18 @@ describe("ak47", function() {
         expect(ak.numRounds).toEqual((32-3))
 
     })
+
+    it ("should not have ammo go below 0 after burst shots", function(){
+
+        let o = new Ak47()
+
+        for (let i = 0; i <= 30; i++) { // Shoot 31 bullets
+            o.shoot()
+        }
+
+        expect(o.numRounds).toEqual(1) // make sure there's only 1 bullet left
+        o.changeFireMode('burst')
+        o.shoot()
+        expect(o.numRounds).toEqual(0)
+    })
 })
