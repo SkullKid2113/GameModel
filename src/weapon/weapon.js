@@ -35,8 +35,7 @@ export class Weapon {
             return
         }
         
-
-        this.numRounds--
+            this.numRounds--
     }
 
     reload() {
