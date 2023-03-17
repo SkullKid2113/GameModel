@@ -15,8 +15,12 @@ export class Weapon {
     }
 
     shoot() {
-        if (this.numRounds > 0) {
+        if (this.fireMode === "single" && this.numRounds > 0) {
             this.numRounds--
+        }
+        else if (this.fireMode === "burst" && this.numRounds > 0) {
+           this.numRounds-=3
+
         }
     }
     reload() {
