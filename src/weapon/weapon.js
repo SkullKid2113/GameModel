@@ -20,11 +20,6 @@ export class Weapon {
             return
         }
 
-        if (this.fireMode === "burst") {
-            this.numRounds -= 3
-            return
-        }
-
         if (this.fireMode === "burst" && this.numRounds === 2) {
             this.numRounds -= 2
             return
@@ -34,6 +29,12 @@ export class Weapon {
             this.numRounds -= 1
             return
         }
+
+        if (this.fireMode === "burst") {
+            this.numRounds -= 3
+            return
+        }
+        
 
         this.numRounds--
     }
