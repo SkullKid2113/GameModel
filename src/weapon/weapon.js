@@ -1,14 +1,14 @@
 export class Weapon {
 
-    weaponname = null
+    name = null
     numRounds = 32
     ammunitionTypes = ["7.62mm", "9mm"]
     attachments = []
     fireModes = ["single"]
     fireMode = "single"
 
-    constructor(weaponName){
-        this.weaponName = name
+    constructor(name){
+        this.name = name
     }
 
     shoot() {
