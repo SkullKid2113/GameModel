@@ -1,17 +1,14 @@
 export class Weapon {
 
-    name = null
-    ammunitionType = null
+    weaponname = null
     numRounds = 32
-
+    ammunitionTypes = ["7.62mm", "9mm"]
     attachments = []
-
     fireModes = ["single"]
     fireMode = "single"
 
-    constructor(name, ammunitionType) {
-        this.ammunitionType = ammunitionType
-        this.name = name
+    constructor(weaponName){
+        this.weaponName = name
     }
 
     shoot() {
@@ -42,5 +39,11 @@ export class Weapon {
             throw {error: "Invalid fire mode"}
         }
         this.fireMode = mode
+    }
+    changeAmmunitionType(ammo) {
+        if (this.ammunitionTypes.index(ammo) === -1) {
+            throw {error: "Ammunition Type Invalid"}
+        }
+        this.ammunitionTypes = ammo
     }
 }
