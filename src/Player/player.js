@@ -1,6 +1,6 @@
 export class player {
 
-name = ("")
+name = ('')
 weaponSlots =[]
 ammoSlots = []
 xLocation = 0
