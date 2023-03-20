@@ -13,7 +13,7 @@ export class Ammunition {
         this.weight = weight
     }
     
-    Ammunition(){
+    Bullet(){
         
         if (this.ammunitionType === "7.62mm")
         this.damagePerBullet = 43
