@@ -46,7 +46,7 @@ export class Weapon {
          damagePerBullet = 15.6
          muzzleVelocity = 1.8
          friction = 2.3
-         weight = .2
+         weight = (.2, "grains")
     }
 
     changeFireMode(mode) {
