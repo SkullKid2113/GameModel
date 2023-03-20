@@ -34,7 +34,7 @@ export class Weapon {
         this.numRounds = 32
     }
 
-    Ammunition(){
+    ammunition(){
 
         if (this.ammo = "7.62mm")
             damagePerBullet = 20.8
