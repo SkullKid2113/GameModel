@@ -3,10 +3,10 @@ export class player {
 name = ('')
 weaponSlots =[]
 ammoSlots = []
-xLocation = 0
-yLocation = 0
-moveSpeed = 0
-jumpHeight = 7
+xLocation = (null, 0)
+yLocation = (null,0)
+moveSpeed = (null,0)
+jumpHeight = (null,7)
 
     constructor (name, moveSpeed)  {
         this.name = name 
