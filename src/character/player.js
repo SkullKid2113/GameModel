@@ -9,9 +9,7 @@ export class player {
   jumpHeight = 7 
 
   constructor (name)  {
-
     this.name = name
-
   }
 
   setRunning() {
@@ -20,12 +18,10 @@ export class player {
 
   setWalking() {
       this.moveSpeed = 10
-    
   }
 
   setStopped() {
       this.moveSpeed = 0
-
   }
 
 }
