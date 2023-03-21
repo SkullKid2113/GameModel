@@ -14,5 +14,17 @@ export class player {
 
   }
 
+  setRunning() {
+
+  }
+
+  setWalking() {
+
+  }
+
+  setStopped() {
+
+  }
+
 }
 
