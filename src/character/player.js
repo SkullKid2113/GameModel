@@ -15,18 +15,16 @@ export class player {
   }
 
   setRunning() {
-    if (this.moveSpeed = 30)
-    return
+      this.moveSpeed = 30 
   }
 
   setWalking() {
-    if (this.moveSpeed = 10)
-    return
+      this.moveSpeed = 10
+    
   }
 
   setStopped() {
-    if (this.moveSpeed = 0)
-    return
+      this.moveSpeed = 0
 
   }
 
