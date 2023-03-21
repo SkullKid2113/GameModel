@@ -13,5 +13,4 @@ export class Ammunition {
         this.friction = friction
         this.weight = weight
     }
-
   }
