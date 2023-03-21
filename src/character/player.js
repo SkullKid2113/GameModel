@@ -5,7 +5,7 @@ export class player {
   ammoSlots = []
   xLocation = 0 
   yLocation = 0 
-  moveSpeed = 30 
+  moveSpeed = 0 
   jumpHeight = 7 
 
   constructor (name)  {
@@ -15,14 +15,18 @@ export class player {
   }
 
   setRunning() {
-
+    if (this.moveSpeed = 30)
+    return
   }
 
   setWalking() {
-
+    if (this.moveSpeed = 10)
+    return
   }
 
   setStopped() {
+    if (this.moveSpeed = 0)
+    return
 
   }
 
