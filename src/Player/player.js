@@ -12,6 +12,8 @@ jumpHeight = (null, defaultvalue = 7)
         this.name = name 
         this.moveSpeed = moveSpeed 
 
+        /*I know this is wrong because I am making functions for them
+        and not methods */
         if (setName("")){
             this.name === "required"
         }
