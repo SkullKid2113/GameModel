@@ -8,9 +8,9 @@ export class Ammunition {
 
     constructor(damagePerBullet, muzzleVelocity, friction, weight) {
             this.ammunitionType = ammunitionType
-        this.damagePerBullet = damagePerBullet
-        this.muzzleVelocity = muzzleVelocity
-        this.friction = friction
-        this.weight = weight
+          this.damagePerBullet = damagePerBullet
+          this.muzzleVelocity = muzzleVelocity
+          this.friction = friction
+          this.weight = weight
     }
   }
