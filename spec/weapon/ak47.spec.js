@@ -1,4 +1,4 @@
-import {Ak47} from "../src/weapon/ak47.js";
+import {Ak47} from "../../src/weapon/ak47.js";
 
 describe("ak47", function() {
 

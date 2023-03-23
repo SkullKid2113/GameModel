@@ -1,4 +1,4 @@
-import {Weapon} from "../src/weapon/weapon.js";
+import {Weapon} from "../../src/weapon/weapon.js";
 
 describe("weapon", function() {
 

@@ -1,4 +1,6 @@
-export class player {
+import {Weapon} from "../weapon/weapon.js";
+
+export class Player {
 
   name = null 
   weaponSlots =[]
@@ -22,6 +24,10 @@ export class player {
 
   setStopped() {
       this.moveSpeed = 0
+  }
+
+  equipWeapon(weapon) {
+
   }
 
 }
