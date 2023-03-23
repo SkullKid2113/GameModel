@@ -1,6 +1,6 @@
 export class Ammunition {
 
-  ammunitionType = []
+  ammunitionType = ""
   damagePerBullet = null
   muzzleVelocity = null
   friction = null
