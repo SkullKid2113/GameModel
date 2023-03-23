@@ -1,6 +1,6 @@
 import {Ammunition} from "./ammunition.js";
 
-export class ammo762 extends Ammunition {
+export class Ammo762 extends Ammunition {
 
   constructor() {
     super("weight", "muzzleVelocity", "friction", "damagePerBullet", "ammunitionType");
