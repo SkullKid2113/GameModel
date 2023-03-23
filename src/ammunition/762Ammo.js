@@ -7,7 +7,7 @@ export class ammo762 extends Ammunition {
       this.weight = 2
       this.damage = 4
       this.friction = 2
-      this.damagePerBullet = 7
+      this.damagePerBullet = 8
       this.ammunitionType = "7.62mm"
     }
 }
