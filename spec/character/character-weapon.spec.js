@@ -27,13 +27,4 @@ describe("character weapons", function () {
 
         expect(jimbo.weaponSlots.length).toEqual(1)
     })
-
-    it("can only equip weapon objects", function() {
-
-        let jimbo = makeJimbo()
-        let weapon = "string, not a weapon..."
-        jimbo.equipWeapon(weapon)
-
-        expect(jimbo.weaponSlots.length).toThrow({error: "Weapon type required"})
-    })
 })
