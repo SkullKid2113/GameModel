@@ -29,10 +29,8 @@ export class Player {
 
   equipWeapon(weapon) {
 
-    //this shish has my mind kerbobbled my guy
-      
-    if (this.weaponSlots === 0){
-      this.equipWeapon +=1
+   if(this.equipWeapon && this.weaponSlots < 1){
+      this.weaponSlots +=1
       
     }
   }
