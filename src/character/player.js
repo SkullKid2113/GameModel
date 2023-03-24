@@ -1,3 +1,4 @@
+import { Ak47 } from "../weapon/ak47.js";
 import {Weapon} from "../weapon/weapon.js";
 
 export class Player {
@@ -28,6 +29,12 @@ export class Player {
 
   equipWeapon(weapon) {
 
+    //this shish has my mind kerbobbled my guy
+      
+    if (this.weaponSlots === 0){
+      this.equipWeapon +=1
+      
+    }
   }
 
 }
