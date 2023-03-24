@@ -2,7 +2,7 @@ import {Ammunition} from "./ammunition.js";
 
 export class Ammo762 extends Ammunition {
 
-  constructor() {
+  constructor(damage, damagePer) {
     super(weight, damage, friction, damagePer, ammunitionType);
       this.weight = 2
       this.damage = 32
