@@ -6,7 +6,7 @@ export class Ammunition {
     friction = null
     weight = null
 
-    constructor(ammunitionType, damagePerBullet, muzzleVelocity, friction, weight) {
+    constructor(damagePerBullet, muzzleVelocity, friction, weight) {
         this.ammunitionType = ammunitionType
         this.damagePerBullet = damagePerBullet
         this.muzzleVelocity = muzzleVelocity
