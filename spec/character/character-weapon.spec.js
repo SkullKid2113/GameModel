@@ -16,6 +16,9 @@ describe("character weapons", function () {
         jimbo.equipWeapon(weapon)
 
         expect(jimbo.weaponSlots.length).toEqual(1)
+
+        expect(jimbo.weaponSlots[0]).toEqual(weapon)
+
     })
 
     it("can not equip more than one of the same type of weapon", function () {
@@ -26,5 +29,7 @@ describe("character weapons", function () {
         jimbo.equipWeapon(weapon)
 
         expect(jimbo.weaponSlots.length).toEqual(1)
+
+        expect(jimbo.weaponSlots[0]).toEqual(weapon)
     })
 })
