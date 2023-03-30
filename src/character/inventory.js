@@ -1,4 +1,3 @@
-import { Ammo762 } from "../ammunition/762Ammo"
 import { Ammunition } from "../ammunition/ammunition"
 
 export class inventoryManager extends Ammunition{
@@ -12,6 +11,7 @@ export class inventoryManager extends Ammunition{
     }
 
     addAmmunition(ammo){
+      
         }
     }
   
