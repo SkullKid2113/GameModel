@@ -1,7 +1,10 @@
-export class inventory {
+import { Ammo762 } from "../ammunition/762Ammo"
+import { Ammunition } from "../ammunition/ammunition"
 
-    weight = 5
-    maxWeight = 60
+export class inventory extends Ammunition{
+
+    weight = null
+    maxWeight = null
     ammunition = {}
 
     constructor(maxWeight){
@@ -9,6 +12,6 @@ export class inventory {
     }
 
     addAmmunition(ammo){
-    
-     }
+        }
     }
+  
