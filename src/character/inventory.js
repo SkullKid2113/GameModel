@@ -7,4 +7,8 @@ export class inventory {
     constructor(maxWeight){
       this.maxWeight = maxWeight
     }
-}
+
+    addAmmunition(ammo){
+    
+     }
+    }
