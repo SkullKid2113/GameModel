@@ -7,6 +7,7 @@ export class Player {
     yLocation = 0
     moveSpeed = 0
     jumpHeight = 7
+    inventoryWeightLimit = 40
 
     constructor(name) {
         this.name = name
