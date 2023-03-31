@@ -1,6 +1,6 @@
 import {Ammunition} from "./ammunition.js";
 
-export class inventory extends Ammunition {
+export class Inventory extends Ammunition {
 
     weight = null
     maxWeight = null
