@@ -4,7 +4,7 @@ export class inventory extends Ammunition {
 
     weight = null
     maxWeight = null
-    ammunition = {}
+    ammunition = new Map()
 
     constructor(maxWeight){
       this.maxWeight = maxWeight
