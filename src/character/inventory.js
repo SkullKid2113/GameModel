@@ -1,6 +1,6 @@
-import { Ammunition } from "../ammunition/ammunition"
+import {Ammunition} from "./ammunition.js";
 
-export class inventoryManager extends Ammunition{
+export class inventory extends Ammunition {
 
     weight = null
     maxWeight = null
@@ -11,7 +11,9 @@ export class inventoryManager extends Ammunition{
     }
 
     addAmmunition(ammo){
+      const ammo = new ammo ();
+      ammo.set("7.62mm", 1)
+      ammo.set("5.56mm", 1)
       
-        }
+     }
     }
-  
