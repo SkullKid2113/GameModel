@@ -5,13 +5,16 @@ export class Inventory extends Ammunition {
   weight = null
   maxWeight = null
 
+  static AmmoInventory = class {
+    /** @type Number */
+    qty = 0
+
+    /** @type Ammunition */
+    ammo = null
+  }
+
   /**
-   @typedef {Object} AmmoInventory
-   @property {Ammunition} ammo
-   @property {Number} qty
-   */
-  /**
-   * @type {Map<String, AmmoInventory>}
+   * @type {Map<String, Inventory.AmmoInventory>}
    */
   ammunition = new Map()
 
