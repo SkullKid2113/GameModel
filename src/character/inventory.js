@@ -1,6 +1,4 @@
-import {Ammunition} from "../ammunition/ammunition.js";
-
-export class Inventory extends Ammunition {
+export class Inventory {
 
   weight = null
   maxWeight = null
@@ -16,7 +14,9 @@ export class Inventory extends Ammunition {
   /**
    * @type {Map<String, Inventory.AmmoInventory>}
    */
-  ammunition = new Map()
+  ammunition = new Map();
+
+    
 
   constructor(maxWeight) {
     this.maxWeight = maxWeight
@@ -28,5 +28,12 @@ export class Inventory extends Ammunition {
     ammo.set("7.62mm", 1)
     ammo.set("5.56mm", 2)
 
+    AmmoInventory = new AmmoInventory();
+    AmmoInventory.set(1, 24)
+    AmmoInventory.set(2, 32)
+
+    Map = {ammo, AmmoInventory}
+
+    }
+
   }
-}
