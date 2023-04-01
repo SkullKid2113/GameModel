@@ -21,4 +21,18 @@ describe("character inventory", function () {
     expect(mapEntry.qty).toEqual(1)
 
   })
+
+  // it("Increments ammunition on subsequent addAmmunition calls for the same type of ammunition", function() {
+  //
+  //   const i = new Inventory(1)
+  //   const ammo = new Ammo556()
+  //
+  //   i.addAmmunition(ammo)
+  //   expect(i.ammunition.get(ammo.ammunitionType).qty).toEqual(1)
+  //   i.addAmmunition(ammo)
+  //   expect(i.ammunition.get(ammo.ammunitionType).qty).toEqual(2)
+  //
+  //
+  // })
+
 })
