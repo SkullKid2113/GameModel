@@ -30,9 +30,9 @@ export class Inventory {
 
     const amIn = new Inventory.AmmoInventory()
 
-      this.ammunition.set(ammo.ammunitionType, ammo.qty)
+      this.ammunition.set(ammo.ammunitionType, amIn)
 
-      this.ammunition.amIn +=1
+      amIn.qty +=1
 
       
 
