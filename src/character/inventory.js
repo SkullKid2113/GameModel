@@ -32,6 +32,9 @@ export class Inventory {
 
       amIn.ammo = ammo
       amIn.qty +=1
+        
+       
+        
 
       
 
