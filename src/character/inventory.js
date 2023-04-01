@@ -26,5 +26,23 @@ export class Inventory {
    */
   addAmmunition(ammo) {
 
+    const amIn = new Inventory.AmmoInventory()
+
+    this.ammunition.set(ammo.ammunitionType, amIn)
+
+    
+    
+
+    
+    
+
+
+    
+       
+
+    
+
+
+
   }
 }
