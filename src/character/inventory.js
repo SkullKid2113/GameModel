@@ -1,3 +1,5 @@
+import { Ammunition } from "../ammunition/ammunition"
+
 export class Inventory {
 
   weight = null
@@ -28,7 +30,18 @@ export class Inventory {
 
     const amIn = new Inventory.AmmoInventory()
 
-    this.ammunition.set(ammo.ammunitionType, amIn)
+      this.ammunition.set(ammo.ammunitionType, ammo.qty)
+
+      this.amIn +=1
+
+
+    
+
+      
+      
+
+    
+
 
     
     
