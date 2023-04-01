@@ -32,29 +32,9 @@ export class Inventory {
 
       this.ammunition.set(ammo.ammunitionType, ammo.qty)
 
-      this.amIn +=1
-
-
-    
+      this.ammunition.amIn +=1
 
       
-      
-
-    
-
-
-    
-    
-
-    
-    
-
-
-    
-       
-
-    
-
 
 
   }
