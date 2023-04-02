@@ -24,20 +24,13 @@ export class Inventory {
    *
    * @param ammo Ammunition
    */
-  addAmmunition(ammo) {
+  addAmmunition(ammo, numRounds) {
 
     const amIn = new Inventory.AmmoInventory()
+    this.ammunition.set(ammo.ammunitionType, amIn)
 
-      this.ammunition.set(ammo.ammunitionType, amIn)
-
-      amIn.ammo = ammo
-      amIn.qty +=1
-        
-       
-        
-
-      
-
+    amIn.ammo = ammo
+    amIn.qty += 1
 
   }
 }
