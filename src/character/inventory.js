@@ -24,19 +24,21 @@ export class Inventory {
    *
    * @param ammo Ammunition
    */
-  addAmmunition(ammo, numRounds) {
+  addAmmunition(ammoToAdd, numRounds) {
+
+    if(this.ammunition.has(ammoToAdd.ammunitionType)){
+       const banana = this.ammunition.get(ammoToAdd.ammunitionType)
+       banana.qty+=numRounds
+       return
+    }
 
     const amIn = new Inventory.AmmoInventory()
-    this.ammunition.set(ammo.ammunitionType, amIn)
 
-    amIn.ammo = ammo
+    amIn.ammo = ammoToAdd
     amIn.qty = numRounds
-      
-   if(this.ammunition.has(ammo.ammunitionType, amIn)){
-      this.addAmmunition(amIn.ammo, amIn.qty)
-      return
-   }
-    else(this.addAmmunition(amIn.ammo, amIn.qty))
-   
+
+    this.ammunition.set(ammoToAdd.ammunitionType, amIn)
+
+
   }
 }
