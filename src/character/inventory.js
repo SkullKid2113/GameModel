@@ -1,15 +1,14 @@
 export class Inventory {
-
-  weight = null
-  maxWeight = null
+  weight = null;
+  maxWeight = null;
 
   static AmmoInventory = class {
     /** @type Number */
-    qty = 0
+    qty = 0;
 
     /** @type Ammunition */
-    ammo = null
-  }
+    ammo = null;
+  };
 
   /**
    * @type {Map<String, Inventory.AmmoInventory>}
@@ -17,7 +16,7 @@ export class Inventory {
   ammunition = new Map();
 
   constructor(maxWeight) {
-    this.maxWeight = maxWeight
+    this.maxWeight = maxWeight;
   }
 
   /**
@@ -25,20 +24,16 @@ export class Inventory {
    * @param ammo Ammunition
    */
   addAmmunition(ammoToAdd, numRounds) {
-
-    if(this.ammunition.has(ammoToAdd.ammunitionType)){
-       const banana = this.ammunition.get(ammoToAdd.ammunitionType)
-       banana.qty+=numRounds
-       return
+    if (this.ammunition.has(ammoToAdd.ammunitionType)) {
+      const banana = this.ammunition.get(ammoToAdd.ammunitionType);
+      banana.qty += numRounds;
+      return;
     }
 
-    const amIn = new Inventory.AmmoInventory()
+    const amIn = new Inventory.AmmoInventory();
 
-    amIn.ammo = ammoToAdd
-    amIn.qty = numRounds
-
-    this.ammunition.set(ammoToAdd.ammunitionType, amIn)
-
-
+    amIn.ammo = ammoToAdd;
+    amIn.qty = numRounds;
+    this.ammunition.set(ammoToAdd.ammunitionType, amIn);
   }
 }
