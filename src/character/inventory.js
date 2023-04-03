@@ -30,7 +30,7 @@ export class Inventory {
     this.ammunition.set(ammo.ammunitionType, amIn)
 
     amIn.ammo = ammo
-    amIn.qty += 1
-
+    amIn.qty = numRounds
+      
   }
 }
