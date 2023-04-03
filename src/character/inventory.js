@@ -32,5 +32,11 @@ export class Inventory {
     amIn.ammo = ammo
     amIn.qty = numRounds
       
+   if(this.ammunition.has(ammo.ammunitionType, amIn)){
+      this.addAmmunition(amIn.ammo, amIn.qty)
+      return
+   }
+    else(this.addAmmunition(amIn.ammo, amIn.qty))
+   
   }
 }
