@@ -25,8 +25,8 @@ export class Inventory {
    */
   addAmmunition(ammoToAdd, numRounds) {
     if (this.ammunition.has(ammoToAdd.ammunitionType)) {
-      const banana = this.ammunition.get(ammoToAdd.ammunitionType);
-      banana.qty += numRounds;
+      this.ammunition.get(ammoToAdd.ammunitionType).qty += numRounds;
+
       return;
     }
 
