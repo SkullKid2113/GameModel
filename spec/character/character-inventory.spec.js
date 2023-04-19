@@ -4,7 +4,7 @@ import {Ammo762} from "../../src/ammunition/762Ammo.js";
 
 describe("character inventory", function () {
 
-  it("calculates the weight as expected", function() {
+  it("calculates the weight as expected", function () {
     const i = new Inventory(1000)
     const ammo = new Ammo556()
 
@@ -22,6 +22,32 @@ describe("character inventory", function () {
 
     // Now we expect the weight to be as much as 5 * (bullet weight)
     expect(i.getWeight()).toEqual(ammo.weight * 5)
+  })
+
+  it("does not allow adding ammunition if there is no weight capacity left", function () {
+    const i = new Inventory(1000)
+    const ammo = new Ammo556() // the weight is 40 for 556 right now
+
+    // Make sure our weight is 0 as the inventory is empty right now */
+    expect(i.getWeight()).toEqual(0)
+    expect(i.ammunition.size).toEqual(0)
+
+    // Add one round of ammo
+    i.addAmmunition(ammo, 2)
+
+    // Make sure our weight went up
+    expect(i.getWeight()).toBeGreaterThan(0)
+    // Make sure the 2 bullets are there
+    expect(i.ammunition.get(ammo.ammunitionType).qty).toEqual(2)
+
+    // Now let's try to add an ungodly amount of ammunition
+    i.addAmmunition(ammo, 50000)
+
+    // Ensure at least -some- ammo got added
+    expect(i.ammunition.get(ammo.ammunitionType).qty).toBeGreaterThan(2)
+
+    // Regardless of how much ammo we add, we shouldn't exceed the weight limit
+    expect(i.getWeight()).toBeLessThanOrEqual(i.maxWeight)
   })
 
   it("allows the adding of ammunition", function () {

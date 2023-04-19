@@ -19,10 +19,16 @@ export class Inventory {
     this.maxWeight = maxWeight;
   }
 
-
   addAmmunition(ammoToAdd, numRounds) {
     if (this.ammunition.has(ammoToAdd.ammunitionType)) {
-      this.ammunition.get(ammoToAdd.ammunitionType).qty += numRounds;
+
+      // We need to pull the value object out so we can increment it
+      let ammoInventoryItem = this.ammunition.get(ammoToAdd.ammunitionType)
+      ammoInventoryItem.qty += numRounds;
+
+      // Now that we incremented the quantity of rounds, we need to update the map with the updated value object.
+      // NOTE: In other languages (e.g. java, c#), the object would be a reference and you wouldn't have to do this.
+      this.ammunition.set(ammoToAdd.ammunitionType, ammoInventoryItem)
 
       return;
     }
@@ -36,12 +42,12 @@ export class Inventory {
 
   getWeight() {
 
-    let weight = 0
+    let weightCalc = 0
 
-    this.ammunition.forEach((ammunition) => {
-      weight += (ammunition.ammo.weight)
+    this.ammunition.forEach((mapValue) => {
+      weightCalc += (mapValue.ammo.weight)
     })
 
-    return weight
+    return weightCalc
   }
 }
