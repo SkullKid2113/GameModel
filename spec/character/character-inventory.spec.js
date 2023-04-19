@@ -5,7 +5,7 @@ import {Ammo762} from "../../src/ammunition/762Ammo.js";
 describe("character inventory", function () {
 
   it("calculates the weight as expected", function() {
-    const i = new Inventory(1)
+    const i = new Inventory(1000)
     const ammo = new Ammo556()
 
     // Make sure our weight is 0 as the inventory is empty right now */
