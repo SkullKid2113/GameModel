@@ -16,6 +16,12 @@ describe("character inventory", function () {
 
     // Now we should get back the weight of the 1 round of ammo
     expect(i.getWeight()).toEqual(ammo.weight)
+
+    // Now we'll add 4 more rounds (This will make 5 rounds total)
+    i.addAmmunition(ammo, 4)
+
+    // Now we expect the weight to be as much as 5 * (bullet weight)
+    expect(i.getWeight()).toEqual(ammo.weight * 5)
   })
 
   it("allows the adding of ammunition", function () {

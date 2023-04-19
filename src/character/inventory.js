@@ -19,10 +19,7 @@ export class Inventory {
     this.maxWeight = maxWeight;
   }
 
-  /**
-   *
-   * @param ammo Ammunition
-   */
+
   addAmmunition(ammoToAdd, numRounds) {
     if (this.ammunition.has(ammoToAdd.ammunitionType)) {
       this.ammunition.get(ammoToAdd.ammunitionType).qty += numRounds;
