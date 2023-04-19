@@ -36,4 +36,15 @@ export class Inventory {
     amIn.qty = numRounds;
     this.ammunition.set(ammoToAdd.ammunitionType, amIn);
   }
+
+  getWeight() {
+
+    let weight = 0
+
+    this.ammunition.forEach((mapValue) => {
+      weight += (mapValue.ammo.weight)
+    })
+
+    return weight
+  }
 }
