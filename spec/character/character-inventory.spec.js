@@ -101,10 +101,5 @@ describe("character inventory", function () {
     i.removeAmmunition(ammo, 10);
 
     expect(i.ammunition.get(ammo.ammunitionType).qty).toEqual(20);
-
-    const mapEntry = i.ammunition.get(ammo.ammunitionType);
-
-    expect(mapEntry.ammo).toEqual(ammo);
-    expect(mapEntry.qty).toEqual(1);
   });
 });
