@@ -21,14 +21,13 @@ export class Inventory {
 
   addAmmunition(ammoToAdd, numRounds) {
     if (this.ammunition.has(ammoToAdd.ammunitionType)) {
-
       // We need to pull the value object out so we can increment it
-      let ammoInventoryItem = this.ammunition.get(ammoToAdd.ammunitionType)
+      let ammoInventoryItem = this.ammunition.get(ammoToAdd.ammunitionType);
       ammoInventoryItem.qty += numRounds;
 
       // Now that we incremented the quantity of rounds, we need to update the map with the updated value object.
       // NOTE: In other languages (e.g. java, c#), the object would be a reference and you wouldn't have to do this.
-      this.ammunition.set(ammoToAdd.ammunitionType, ammoInventoryItem)
+      this.ammunition.set(ammoToAdd.ammunitionType, ammoInventoryItem);
 
       return;
     }
@@ -41,13 +40,29 @@ export class Inventory {
   }
 
   getWeight() {
-
-    let weightCalc = 0
+    let weightCalc = 0;
 
     this.ammunition.forEach((mapValue) => {
-      weightCalc += (mapValue.ammo.weight)
-    })
+      weightCalc += mapValue.ammo.weight += mapValue.ammo.qty;
+    });
 
-    return weightCalc
+    return weightCalc;
+  }
+
+  removeAmmunition() {
+    if (this.ammunition.has(ammoToRemove.ammunitionType)) {
+      let ammoInventoryItem = this.ammunition.get(ammoToRemove.ammunitionType);
+      ammoInventoryItem.qty -= numRounds;
+
+      this.ammunition.set(ammoToRemove.ammunitionType, ammoInventoryItem);
+
+      return;
+    }
+
+    const amIn = new Inventory.AmmoInventory();
+
+    amIn.ammo = ammoToRemove;
+    amIn.qty = numRounds;
+    this.ammunition.set(ammoToRemove.ammunitionType, amIn);
   }
 }
