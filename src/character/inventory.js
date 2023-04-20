@@ -49,7 +49,7 @@ export class Inventory {
     return weightCalc;
   }
 
-  removeAmmunition() {
+  removeAmmunition(ammoToRemove, numRounds) {
     if (this.ammunition.has(ammoToRemove.ammunitionType)) {
       let ammoInventoryItem = this.ammunition.get(ammoToRemove.ammunitionType);
       ammoInventoryItem.qty -= numRounds;
