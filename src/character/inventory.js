@@ -50,19 +50,15 @@ export class Inventory {
   }
 
   removeAmmunition(ammoToRemove, numRounds) {
-    if (this.ammunition.has(ammoToRemove.ammunitionType)) {
+
+    if (!this.ammunition.has(ammoToRemove.ammunitionType)) {
+      return
+    }
+
       let ammoInventoryItem = this.ammunition.get(ammoToRemove.ammunitionType);
       ammoInventoryItem.qty -= numRounds;
 
       this.ammunition.set(ammoToRemove.ammunitionType, ammoInventoryItem);
-
-      return;
-    }
-
-    const amIn = new Inventory.AmmoInventory();
-
-    amIn.ammo = ammoToRemove;
-    amIn.qty = numRounds;
-    this.ammunition.set(ammoToRemove.ammunitionType, amIn);
+    
   }
 }
