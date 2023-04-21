@@ -43,7 +43,7 @@ export class Inventory {
     let weightCalc = 0;
 
     this.ammunition.forEach((mapValue) => {
-      weightCalc += mapValue.ammo.weight += mapValue.ammo.qty;
+      weightCalc += mapValue.ammo.weight * mapValue.qty
     });
 
     return weightCalc;
