@@ -3,6 +3,36 @@ import { Ammo556 } from "../../src/ammunition/556Ammo.js";
 import { Ammo762 } from "../../src/ammunition/762Ammo.js";
 
 describe("character inventory", function () {
+
+  it("cannot remove more ammunition than in inventory", function() {
+    const i = new Inventory(1000);
+    const ammo = new Ammo556();
+
+    i.addAmmunition(ammo, 2);
+    
+    expect(i.ammunition.get(ammo.ammunitionType).qty).toEqual(2);
+
+
+    i.removeAmmunition(ammo, 2)
+    expect(i.ammunition.get(ammo.ammunitionType).qty).toEqual(0);
+
+    // Now let's try to make it go below 0, (it shouldn't!)
+    i.removeAmmunition(ammo, 1)
+    expect(i.ammunition.get(ammo.ammunitionType).qty).toEqual(0);
+  })
+
+  it("removes ammunition as expected", function() {
+    const i = new Inventory(1000);
+    const ammo = new Ammo556();
+
+    i.addAmmunition(ammo, 2);
+    
+    expect(i.ammunition.get(ammo.ammunitionType).qty).toEqual(2);
+
+    i.removeAmmunition(ammo, 1)
+    expect(i.ammunition.get(ammo.ammunitionType).qty).toEqual(1);
+  })
+
   it("calculates the weight as expected", function () {
     const i = new Inventory(1000);
     const ammo = new Ammo556();
