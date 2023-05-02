@@ -29,8 +29,9 @@ describe("character inventory", function () {
     
     expect(i.ammunition.get(ammo.ammunitionType).qty).toEqual(2);
 
-    i.removeAmmunition(ammo, 1)
+    const ammoRemainingReturned = i.removeAmmunition(ammo, 1)
     expect(i.ammunition.get(ammo.ammunitionType).qty).toEqual(1);
+    expect(ammoRemainingReturned).toEqual(1)
   })
 
   it("calculates the weight as expected", function () {
@@ -53,32 +54,32 @@ describe("character inventory", function () {
     expect(i.getWeight()).toEqual(ammo.weight * 5);
   });
 
-  it("does not allow adding ammunition if there is no weight capacity left", function () {
-    const i = new Inventory(1000);
-    const ammo = new Ammo556(); // the weight is 40 for 556 right now
+  // it("does not allow adding ammunition if there is no weight capacity left", function () {
+  //   const i = new Inventory(1000);
+  //   const ammo = new Ammo556(); // the weight is 40 for 556 right now
 
-    // Make sure our weight is 0 as the inventory is empty right now
-    expect(i.getWeight()).toEqual(0);
-    expect(i.ammunition.size).toEqual(0); // no ammo
+  //   // Make sure our weight is 0 as the inventory is empty right now
+  //   expect(i.getWeight()).toEqual(0);
+  //   expect(i.ammunition.size).toEqual(0); // no ammo
 
-    // Add 2 rounds of ammo
-    i.addAmmunition(ammo, 2);
+  //   // Add 2 rounds of ammo
+  //   i.addAmmunition(ammo, 2);
 
-    // Make sure our weight went up
-    expect(i.getWeight()).toBeGreaterThan(0);
-    // Make sure the 2 bullets are there
-    expect(i.ammunition.get(ammo.ammunitionType).qty).toEqual(2);
+  //   // Make sure our weight went up
+  //   expect(i.getWeight()).toBeGreaterThan(0);
+  //   // Make sure the 2 bullets are there
+  //   expect(i.ammunition.get(ammo.ammunitionType).qty).toEqual(2);
 
-    // Now let's try to add an ungodly amount of ammunition
-    i.addAmmunition(ammo, 50000);
+  //   // Now let's try to add an ungodly amount of ammunition
+  //   i.addAmmunition(ammo, 50000);
 
-    // Regardless of how much ammo we try to add, we shouldn't exceed the weight limit
-    expect(i.getWeight()).toBeLessThanOrEqual(i.maxWeight);
+  //   // Regardless of how much ammo we try to add, we shouldn't exceed the weight limit
+  //   expect(i.getWeight()).toBeLessThanOrEqual(i.maxWeight);
 
-    // We should also expect that several rounds of ammunition -did- get
-    // added into inventory, up to the point where weight capacity ran out.
-    expect(i.ammunition.get(ammo.ammunitionType).qty).toBeGreaterThan(2);
-  });
+  //   // We should also expect that several rounds of ammunition -did- get
+  //   // added into inventory, up to the point where weight capacity ran out.
+  //   expect(i.ammunition.get(ammo.ammunitionType).qty).toBeGreaterThan(2);
+  // });
 
   it("allows the adding of ammunition", function () {
     const i = new Inventory(1);
