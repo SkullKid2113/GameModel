@@ -43,22 +43,23 @@ export class Inventory {
     let weightCalc = 0;
 
     this.ammunition.forEach((mapValue) => {
-      weightCalc += mapValue.ammo.weight * mapValue.qty
+      weightCalc += mapValue.ammo.weight * mapValue.qty;
     });
 
     return weightCalc;
   }
 
   removeAmmunition(ammoToRemove, numRounds) {
-
     if (!this.ammunition.has(ammoToRemove.ammunitionType)) {
-      return
+      return;
     }
 
-      let ammoInventoryItem = this.ammunition.get(ammoToRemove.ammunitionType);
-      ammoInventoryItem.qty -= numRounds;
-
-      this.ammunition.set(ammoToRemove.ammunitionType, ammoInventoryItem);
-    
+    if (this.ammunition.has(ammoToRemove.ammunitionType)) {
+      let ammoInInventory = this.ammunition.get(ammoToRemove.ammunitionType);
+      if (ammoInInventory.qty === 0) {
+        return;
+      }
+      ammoInInventory.qty -= numRounds;
+    }
   }
 }
