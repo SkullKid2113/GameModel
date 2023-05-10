@@ -60,6 +60,7 @@ export class Inventory {
         return;
       }
       ammoInInventory.qty -= numRounds;
+      return numRounds
     }
   }
 }
