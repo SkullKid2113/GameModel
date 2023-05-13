@@ -129,8 +129,21 @@ describe("character inventory", function () {
 
     const ammo = new Ammo556();
     i.addAmmunition(ammo, 30);
-    i.removeAmmunition(ammo, 10);
+    const removed = i.removeAmmunition(ammo, 10);
 
+    expect(removed).toEqual(10)
     expect(i.ammunition.get(ammo.ammunitionType).qty).toEqual(20);
+  });
+
+  it("only removes as much ammunition as there is in inventory", function () {
+    const i = new Inventory(1);
+    expect(i.ammunition.size).toEqual(0);
+
+    const ammo = new Ammo556();
+    i.addAmmunition(ammo, 30);
+    const removed = i.removeAmmunition(ammo, 31);
+
+    expect(removed).toEqual(30)
+    expect(i.ammunition.get(ammo.ammunitionType).qty).toEqual(0);
   });
 });
