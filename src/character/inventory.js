@@ -56,11 +56,11 @@ export class Inventory {
 
     if (this.ammunition.has(ammoToRemove.ammunitionType)) {
       let ammoInInventory = this.ammunition.get(ammoToRemove.ammunitionType);
-      if (ammoInInventory.qty <= 0) {
-        ammoInInventory.qty -= ammoInInventory.qty
-        return
-      
+      if (ammoInInventory.qty < numRounds) {
+        numRounds = ammoInInventory.qty
+        
       }
+      
       ammoInInventory.qty -= numRounds;
       return numRounds;
     }
