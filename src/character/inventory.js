@@ -45,7 +45,7 @@ export class Inventory {
     this.ammunition.forEach((mapValue) => {
       weightCalc += mapValue.ammo.weight * mapValue.qty;
     });
-    
+
     return weightCalc;
   }
 
@@ -57,10 +57,9 @@ export class Inventory {
     if (this.ammunition.has(ammoToRemove.ammunitionType)) {
       let ammoInInventory = this.ammunition.get(ammoToRemove.ammunitionType);
       if (ammoInInventory.qty < numRounds) {
-        numRounds = ammoInInventory.qty
-        
+        numRounds = ammoInInventory.qty;
       }
-      
+
       ammoInInventory.qty -= numRounds;
       return numRounds;
     }
